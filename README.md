@@ -44,12 +44,14 @@ cd <your-repo>
 Make sure you have Python 3.x installed, then run:
 ```
 pip install -r requirements.txt
+
 ````
 Example requirements.txt:
 ```
 beautifulsoup4
 selenium
 webdriver-manager
+
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usage
@@ -68,12 +70,12 @@ python url2.py
  ```
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.example.com/</loc>
-  </url>
-  <url>
-    <loc>https://www.example.com/about</loc>
-  </url>
+ <url>
+   <loc>https://www.example.com/</loc>
+ </url>
+ <url>
+   <loc>https://www.example.com/about</loc>
+ </url>
 </urlset>
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,30 +85,27 @@ How It Works
 
 2.Uses Selenium to render pages (handles JavaScript-based sites).
 
-3.Parses HTML with BeautifulSoup to find <a> tags.
+3.Parses HTML with BeautifulSoup to find tags.
 
 4.Converts relative links to absolute URLs.
 
 5.Skips:
-
-  * External URLs
-
-  * Anchor (#) links
-
-  *  Already visited pages
+- External URLs
+- Anchor (#) links
+- Already visited pages
 
 6.Writes the list of URLs to sitemap.xml.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Challenges & Solutions
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1.Challenge: Duplicate URLs being added.
+1.Challenge: Duplicate URLs being added. 
 Solution: Used a set() for visited URLs.
 
-2.Challenge: Some pages loaded slowly.
+2.Challenge: Some pages loaded slowly. 
 Solution: Added a time.sleep(2) delay after each page load.
 
-3.Challenge: Handling ChromeDriver setup.
+3.Challenge: Handling ChromeDriver setup. 
 Solution: Used webdriver_manager to auto-install ChromeDriver.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
