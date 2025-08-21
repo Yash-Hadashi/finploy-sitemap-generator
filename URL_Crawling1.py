@@ -8,7 +8,6 @@ from selenium.webdriver.chrome.options import Options
 import time
 import logging
 
-# -------------------- SETTINGS --------------------
 START_URL = "https://www.finploy.com"
 OUTPUT_FILE = "sitemap.xml"
 HEADLESS = True  # True to hide browser, False to see it
@@ -18,7 +17,6 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
 
 
-# -------------------- HELPERS --------------------
 def is_same_domain(start_netloc, url):
     return urlparse(url).netloc.endswith(start_netloc)
 
@@ -96,7 +94,7 @@ def crawl_site():
     visited = set()
     queue = deque()
 
-    # seed with start_url + location links
+    
     location_links = expand_jobs_by_location(driver, wait=DELAY)
     queue.append(START_URL)
     for link in location_links:
@@ -136,7 +134,7 @@ def generate_sitemap(urls):
     logging.info(f"Sitemap saved to {OUTPUT_FILE} with {len(urls)} URLs.")
 
 
-# -------------------- MAIN --------------------
 if __name__ == "__main__":
     urls = crawl_site()
     generate_sitemap(urls)
+
