@@ -70,12 +70,14 @@ python url2.py
  ```
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- <url>
-   <loc>https://www.example.com/</loc>
- </url>
- <url>
-   <loc>https://www.example.com/about</loc>
- </url>
+  <url>
+    <loc>https://www.finploy.com/jobs-in-other-dept-in-operations-central</loc>
+    <lastmod>2025-08-09T16:26:29Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.finploy.com/jobs-in-others-in-ma-advisory</loc>
+    <lastmod>2025-08-09T16:26:29Z</lastmod>
+  </url>
 </urlset>
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
